@@ -1,15 +1,17 @@
 <html>
+
 <head>
     <title>New Zealand Tourist Information</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-   
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -20,10 +22,23 @@
         </div>
         <div class="main">
             <div class="map" id="mapid"></div>
-            <div class="query"></div>
-            <div class="info"></div>
+            <div class="query">
+                <p>Which town would you like to visit?</p>
+                <input type="text"><input type="button" value="Submit">
+                <div class="recent">
+                    <h3>Recent:</h3>
+                    <p>Hamilton</p>
+                    <p>Queenstown</p>
+                    <p>New Plymouth</p>
+                </div>
+            </div>
+            <div class="info">
+                <p>Queenstown Currently: Sunrise at Sun rises at 6.46am and and sets at 5.57pm</p>
+                <p>Current weather is Rain, outlook: light rain max temp: 2.76 min temp: 2.76</p>
+            </div>
         </div>
     </div>
     <script src="scripts/app.js"></script>
 </body>
+
 </html>
