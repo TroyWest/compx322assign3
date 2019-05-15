@@ -27,6 +27,7 @@ $(document).ready(function () {
                         var latLng = cityDetails.latLng;
                         mymap.setView([latLng.lat, latLng.lng], 13);
                         getInfo(latLng);
+                        getWeather(latLng);
                         searches.push(cityDetails);
                     } else {
                         alert(currentCity + " not found.\nPlease enter a valid city in New Zealand");
@@ -41,8 +42,7 @@ $(document).ready(function () {
 function getInfo(latLng) {
     fetch("getinfo.php?lat=" + latLng.lat + "&long=" + latLng.lng)
         .then(response => response.json())
-        .then((json) => {
-            console.log(json);
+        .then((json) => {            
             var sunrise = new Date(json.results.sunrise);
             var sunset = new Date(json.results.sunset);
             $("#daylight").html(currentCity + " currently: Sun rises at " + sunrise.toLocaleTimeString() + " and sets at " +  sunset.toLocaleTimeString());
@@ -50,6 +50,35 @@ function getInfo(latLng) {
 }
 
 function getWeather(latLng){
+    ajaxRequest("getweather.php?lat=" + latLng.lat + "&long=" + latLng.lng, "", "GET", displayWeather);       
+}
 
+function displayWeather(response) {
+    var parser = new DOMParser();
+    result = parser.parseFromString(response, "text/xml");
+
+}
+
+
+function ajaxRequest(url, data, method, callback) {
+	var request = new XMLHttpRequest();
+	request.open(method, url, true);
+
+	if (method == "POST") {
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	}
+
+	request.onreadystatechange = function () {
+		if (request.readyState == 4) {
+			if (request.status == 200) {
+				callback(request.responseText);
+			} else {
+				console.log(request.responseText);
+			}
+
+		}
+	}
+
+	request.send(data);
 }
 
