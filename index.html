@@ -1,41 +1,40 @@
 <html>
+    <head>
+        <title>New Zealand Tourist Information</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin="" />
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="scripts/app.js"></script>
 
-<head>
-    <title>New Zealand Tourist Information</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-        crossorigin="" />
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-        crossorigin=""></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/app.js"></script>
+    </head>
 
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo"><img class="logo" src="images/kiwi-74363_640.jpg" alt="Some kiwifruit"></div>
-            <div class="title">
-                <h1>New Zealand Tourist Information</h1>
-            </div>
-        </div>
-        <div class="main">
-            <div class="map" id="mapid"></div>
-            <div class="query">
-                <p>Which town would you like to visit?</p>
-                <input id="city" type="text"><input id="submit" type="button" value="Submit">
-                <div class="recent">
-                    <h3>Recent Searches:</h3>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="logo"><img class="logo" src="images/kiwi-74363_640.jpg" alt="Some kiwifruit"></div>
+                <div class="title">
+                    <h1>New Zealand Tourist Information</h1>
                 </div>
             </div>
-            <div class="info">                
+            <div class="main">
+                <div class="map" id="mapid"></div>
+                <div class="query">
+                    <p>Which town would you like to visit?</p>
+                    <input id="city" type="text"><input id="submit" type="button" value="Submit">
+                    <div class="recent">
+                        <h3>Recent Searches:</h3>
+                    </div>
+                </div>
+                <div class="info"> 
+                    <span id="daylight"></span>
+                    <span id="weather"></span>               
+                </div>
             </div>
         </div>
-    </div>
-    
-</body>
-
+    </body>
 </html>
