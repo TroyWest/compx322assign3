@@ -4,7 +4,7 @@
     $lat =  $_GET["lat"];
     $long = $_GET["long"];
 
-    $curl_request = curl_init("api.openweathermap.org/data/2.5/weather?lat=".$lat."&lon=".$long."&appid=".$key."&mode=xml");
+    $curl_request = curl_init("api.openweathermap.org/data/2.5/weather?lat=".$lat."&lon=".$long."&appid=".$key."&mode=xml&units=metric");
 
     curl_setopt($curl_request, CURLOPT_RETURNTRANSFER, TRUE);
 

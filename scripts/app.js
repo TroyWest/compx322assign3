@@ -55,7 +55,14 @@ function getWeather(latLng){
 
 function displayWeather(response) {
     var parser = new DOMParser();
-    result = parser.parseFromString(response, "text/xml");
+    var result = parser.parseFromString(response, "text/xml");
+    var weather = result.getElementsByTagName("weather")[0];
+    var temperature = result.getElementsByTagName("temperature")[0];
+    $("#weather").html("Current weather is " + weather.getAttribute('value') 
+        + ". It is currently " + temperature.getAttribute('value') 
+        + "&deg;C. Max temp: " + temperature.getAttribute('max')
+        + "&deg;C. Min temp: " + temperature.getAttribute('min')
+        + "&deg;C.");
 
 }
 
