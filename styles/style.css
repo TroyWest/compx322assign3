@@ -30,6 +30,10 @@ body {
     padding: 10px 30px;
 }
 
+#recentSearches {
+    list-style: none;
+}
+
 .query {
     padding-top: 75px; 
     float: left;
